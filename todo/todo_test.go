@@ -3,7 +3,7 @@ package todo_test
 import (
 	"testing"
 
-	"github.com/lucassha/pragprogramming/chp2/todo"
+	"github.com/lucassha/pragprogramming/todo"
 )
 
 func TestAdd(t *testing.T) {
