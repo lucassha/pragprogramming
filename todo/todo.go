@@ -83,3 +83,19 @@ func (l *List) Get(filename string) error {
 
 	return json.Unmarshal(file, l)
 }
+
+func (l *List) String() string {
+	formatted := ""
+
+	for k, t := range *l {
+		prefix := "  "
+		if t.Done {
+			prefix = "X "
+		}
+
+		// adjust the item number k to print numbers starting from 1 index instead of 0
+		formatted += fmt.Sprintf("%s%d: %s\n", prefix, k+1, t.Task)
+	}
+
+	return formatted
+}
