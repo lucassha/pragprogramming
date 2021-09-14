@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 FHASH=`shasum -a 256 $1` 
 while true; do
