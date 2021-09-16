@@ -48,9 +48,6 @@ func archiveFile(destDir, root, path string) error {
 	}
 
 	relDir, err := filepath.Rel(root, filepath.Dir(path))
-	fmt.Println(root)
-	fmt.Println(filepath.Dir(path))
-	fmt.Println(relDir)
 	if err != nil {
 		return err
 	}
@@ -59,7 +56,12 @@ func archiveFile(destDir, root, path string) error {
 	// with filepath you ensure the paths are built in accordance with the
 	// operating system where the program is running, making it cross-platform
 	targetPath := filepath.Join(destDir, relDir, dest)
-	fmt.Println(targetPath)
+
+	// trying to figure out how this works lol
+	fmt.Println("root", root)
+	fmt.Println("dir filepath", filepath.Dir(path))
+	fmt.Println("rel dir", relDir)
+	fmt.Println("target path", targetPath)
 
 	if err := os.MkdirAll(filepath.Dir(targetPath), 0755); err != nil {
 		return err
